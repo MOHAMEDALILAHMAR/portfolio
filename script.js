@@ -47,6 +47,16 @@ if (nav && navToggle) {
     });
 }
 
+// Add scrolled state to nav for shadow/solid background
+window.addEventListener('scroll', () => {
+    if (!nav) return;
+    if (window.pageYOffset > 10) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
 // Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scrollToTop');
 

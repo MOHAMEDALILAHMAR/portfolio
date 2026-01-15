@@ -21,10 +21,12 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 1rem 5%;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.85);
     position: sticky;
     top: 0;
     align-items: center;
+    backdrop-filter: blur(10px);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 nav ul { display: flex; list-style: none; gap: 20px; }
@@ -37,6 +39,11 @@ nav a {
 nav a:hover {
     color: var(--accent-color);
     transform: translateY(-2px);
+}
+
+nav.scrolled {
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .nav-toggle {
@@ -201,6 +208,21 @@ section { padding: 50px 10% }
         grid-auto-rows: minmax(24px, auto);
     }
     .lang-row span:nth-child(n+2) {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 560px) {
+    .lang-row {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 6px;
+    }
+    .lang-row span:first-child {
+        grid-column: 1 / -1;
+        font-weight: 600;
+    }
+    .lang-row span {
         font-size: 0.95em;
     }
 }
