@@ -24,6 +24,7 @@ nav {
     background: rgba(15, 23, 42, 0.9);
     position: sticky;
     top: 0;
+    align-items: center;
 }
 
 nav ul { display: flex; list-style: none; gap: 20px; }
@@ -36,6 +37,38 @@ nav a {
 nav a:hover {
     color: var(--accent-color);
     transform: translateY(-2px);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--accent-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 header {
@@ -582,13 +615,24 @@ body.light-mode {
     nav {
         flex-direction: column;
         padding: 1rem 3%;
+        align-items: flex-start;
+    }
+    
+    .nav-toggle {
+        display: flex;
     }
     
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 10px 0 0 0;
+        gap: 12px;
+    }
+    
+    nav.nav-open ul {
+        display: flex;
     }
     
     header {

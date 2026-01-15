@@ -25,6 +25,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile nav toggle
+const nav = document.querySelector('nav');
+const navToggle = document.getElementById('navToggle');
+
+if (nav && navToggle) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav-open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    nav.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}
+
 // Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
