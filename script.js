@@ -80,7 +80,15 @@ createThemeToggle();
 
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+
 if (contactForm) {
+    const setStatus = (message, type = 'info') => {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+        statusEl.className = `form-status ${type}`;
+    };
+
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
@@ -90,17 +98,18 @@ if (contactForm) {
         // Disable button and show loading state
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
+        setStatus('Sending your message...', 'info');
         
         // Send email using EmailJS
         emailjs.sendForm('service_vdxdzyf', 'template_gwcuxzz', contactForm)
             .then(() => {
-                alert('Message sent successfully! I\'ll get back to you soon.');
+                setStatus("Message sent! I'll get back to you soon.", 'success');
                 contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
             }, (error) => {
                 console.error('Failed to send message:', error);
-                alert('Failed to send message. Please try again or email me directly at dalilahmer1212@gmail.com');
+                setStatus('Failed to send. Please try again or email me at dalilahmer1212@gmail.com', 'error');
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalBtnText;
             });

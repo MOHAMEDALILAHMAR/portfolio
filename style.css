@@ -673,3 +673,23 @@ body.light-mode {
         height: 120px;
     }
 }
+
+/* Contact form status messages */
+.form-status {
+    margin-top: 8px;
+    min-height: 20px;
+    font-size: 0.95rem;
+    color: #d1d5db;
+}
+
+.form-status.info {
+    color: #d1d5db;
+}
+
+.form-status.success {
+    color: #22c55e;
+}
+
+.form-status.error {
+    color: #f87171;
+}
