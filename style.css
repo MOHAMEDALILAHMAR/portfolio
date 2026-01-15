@@ -646,13 +646,20 @@ body.light-mode {
     }
 
     nav {
-        flex-direction: column;
+        flex-direction: row;
         padding: 1rem 3%;
-        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        order: 1;
     }
     
     .nav-toggle {
         display: flex;
+        order: 2;
+        margin-left: 12px;
     }
     
     nav ul {
