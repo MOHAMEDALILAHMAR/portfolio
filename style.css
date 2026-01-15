@@ -20,7 +20,7 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 16px;
     padding: 1rem 5%;
     background: rgba(15, 23, 42, 0.85);
@@ -33,6 +33,11 @@ nav {
     align-items: center;
     backdrop-filter: blur(10px);
     transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo {
+    position: absolute;
+    left: 5%;
 }
 
 nav ul { display: flex; list-style: none; gap: 20px; }
