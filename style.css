@@ -20,7 +20,7 @@ body {
 
 nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 16px;
     padding: 1rem 5%;
     background: rgba(15, 23, 42, 0.85);
@@ -36,7 +36,6 @@ nav {
 }
 
 nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul { margin-left: auto; }
 nav a { 
     color: white; 
     text-decoration: none; 
