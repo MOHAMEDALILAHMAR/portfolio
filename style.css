@@ -15,6 +15,7 @@ body {
     color: var(--text-color);
     margin: 0;
     line-height: 1.6;
+    padding-top: 80px; /* offset for fixed navbar */
 }
 
 nav {
@@ -22,8 +23,12 @@ nav {
     justify-content: space-between;
     padding: 1rem 5%;
     background: rgba(15, 23, 42, 0.85);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
     align-items: center;
     backdrop-filter: blur(10px);
     transition: background 0.25s ease, box-shadow 0.25s ease;
@@ -634,6 +639,10 @@ body.light-mode {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    body {
+        padding-top: 96px; /* extra space for fixed nav + toggle */
+    }
+
     nav {
         flex-direction: column;
         padding: 1rem 3%;
