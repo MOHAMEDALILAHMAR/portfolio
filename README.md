@@ -66,6 +66,15 @@ I'm a Computer Science student at ISIM Sfax with a passion for web development a
 
 ---
 
+## 🧩 Featured Projects
+
+- **Passkey – Secure CLI Credential Manager** (Python, MongoDB, Encryption, CLI): Securely add/retrieve/delete encrypted credentials, export/import master keys for multi-device access, and backup/restore data. [GitHub](https://github.com/MOHAMEDALILAHMAR/passkey-cli)
+- **Personal Portfolio Website** (HTML, CSS, JavaScript, EmailJS): Responsive portfolio with clean UI, mobile-friendly layout, and EmailJS-powered contact form. [GitHub](https://github.com/MOHAMEDALILAHMAR/portfolio) · [Live](https://mohamedalilahmar.github.io/portfolio)
+- **BMI Calculator – Cross-Platform Flutter Application** (Flutter, Dart): Real-time BMI calculator with color-coded health categories, history tracking, stats/visuals, profiles, notifications, and dark mode across Android/iOS/web/desktop. [GitHub](https://github.com/MOHAMEDALILAHMAR/BMI_Calculator)
+- **Todo Web Application** (NestJS, TypeORM, JWT, ReactJS, PostgreSQL): Full-stack task manager with CRUD, JWT-secured APIs, PostgreSQL persistence, and interactive React frontend. [GitHub](https://github.com/MOHAMEDALILAHMAR/tod)
+
+---
+
 ## 🚀 Setup & Installation
 
 ### Prerequisites
